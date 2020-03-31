@@ -1,0 +1,9 @@
+version: '3.0'
+services:
+    spigot-build:
+        build: .
+        volumes:
+        - ./build-output:/build-output
+        #command: ['java', '-jar', 'BuildTools.jar', '--rev',  'latest', '&&', 'cp', 'spigot*.jar', '/build-output']
+        #command: java -jar BuildTools.jar --rev latest && cp spigot*.jar /build-output
+        command: ['/bin/bash', 'build.sh']
